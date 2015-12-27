@@ -2,7 +2,7 @@
   "name": "jsdk",
   "version": "0.0.3-Alpha",
   "description": "JavaScript Development Kit",
-  "main": "lib/",
+  "main": "lib/index.js",
   "scripts": {
     "test": "eslint src",
     "compile": "babel ./src -d ./lib --ignore __tests__/*",
