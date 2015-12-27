@@ -1,8 +1,11 @@
 {
   "name": "jsdk",
-  "version": "0.0.4-Alpha",
+  "version": "0.0.6-Alpha",
   "description": "JavaScript Development Kit",
   "main": "lib/index.js",
+  "files": [
+    "lib/util/*.js"
+  ],
   "scripts": {
     "test": "eslint src",
     "compile": "babel ./src -d ./lib --ignore __tests__/*",
