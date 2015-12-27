@@ -12,15 +12,19 @@ class StringBuilder {
 
     constructor(capacity:Number = 16) {
         this.value = new Array(capacity);
+        this.count = 0;
     }
 
-    append(str:String):StringBuilder {
-        if (str == null) {
+    append(v):StringBuilder {
+        if (v == null) {
             return this._appendNull();
         }
-        let len = str.length;
+        if (typeof v !== 'string') {
+            v = String(v);
+        }
+        let len = v.length;
         this._ensureCapacityInternal(this.count + len);
-        this.value.push(str);
+        this.value.push(v);
         this.count += len;
         return this;
     }
