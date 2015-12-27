@@ -76,7 +76,7 @@ class Long {
         return n;
     }
 
-    numberOfTrailingZeros(i:Number):Number {
+    static numberOfTrailingZeros(i:Number):Number {
         // HD, Figure 5-14
         let x, y;
         if (i == 0) return 64;
