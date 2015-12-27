@@ -1,6 +1,6 @@
 {
   "name": "jsdk",
-  "version": "0.0.7-Alpha",
+  "version": "0.0.8-Alpha",
   "description": "JavaScript Development Kit",
   "main": "lib/index.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "eslint src",
-    "compile": "babel ./src -d ./lib --ignore __tests__/*",
+    "compile": "babel ./src -d ./ --ignore __tests__/*",
     "prepublish": "npm run compile"
   },
   "repository": {
