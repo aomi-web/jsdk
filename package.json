@@ -1,10 +1,10 @@
 {
   "name": "jsdk",
-  "version": "0.0.6-Alpha",
+  "version": "0.0.7-Alpha",
   "description": "JavaScript Development Kit",
   "main": "lib/index.js",
   "files": [
-    "lib/util/*.js"
+    "lib"
   ],
   "scripts": {
     "test": "eslint src",
