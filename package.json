@@ -1,0 +1,23 @@
+{
+  "name": "jsdk",
+  "version": "0.0.1-Alpha",
+  "description": "JavaScript Development Kit",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sitb-software/jsdk.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "js"
+  ],
+  "author": "Sean <sean.snow@live.com>",
+  "license": "MTI",
+  "bugs": {
+    "url": "https://github.com/sitb-software/jsdk/issues"
+  },
+  "homepage": "https://github.com/sitb-software/jsdk#readme"
+}

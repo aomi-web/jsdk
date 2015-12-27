@@ -1,2 +1,2 @@
-# jsdk
+# JSDK
 JavaScript Development Kit
