@@ -10,8 +10,8 @@ import StringBuilder from '../../src/lang/StringBuilder';
 
     let sb = new StringBuilder();
 
-    sb.append('123');
-    sb.append('1');
+    sb.append(123);
     console.log(sb.toString());
+    console.log(sb.length())
 
 })();
