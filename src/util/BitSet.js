@@ -54,6 +54,11 @@ class BitSet {
             (BITS_PER_WORD - Long.numberOfLeadingZeros(this.words[this.wordsInUse - 1]));
     }
 
+    size() {
+        return this.words.length * BITS_PER_WORD;
+    }
+
+
     cardinality():Number {
         let sum = 0;
         for (let i = 0; i < this.wordsInUse; i++) {
