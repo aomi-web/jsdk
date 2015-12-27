@@ -5,9 +5,9 @@
 
 import Long from '../lang/Long';
 import StringBuilder from '../lang/StringBuilder';
-const ADDRESS_BITS_PER_WORD = 6;
+import Arrays from './Arrays';
+const ADDRESS_BITS_PER_WORD = 5;
 const BITS_PER_WORD = 1 << ADDRESS_BITS_PER_WORD;
-const BIT_INDEX_MASK = BITS_PER_WORD - 1;
 const WORD_MASK = 0xffffffffffffffff;
 
 class BitSet {
@@ -33,7 +33,6 @@ class BitSet {
         let wordIndex = this._wordIndex(bitIndex);
         this._expandTo(wordIndex);
         this.words[wordIndex] |= (1 << bitIndex);
-        this._checkInvariants();
     }
 
     get(bitIndex:Number):Boolean {
@@ -41,7 +40,6 @@ class BitSet {
             throw Error(`bitIndex < 0: ${bitIndex}`);
         }
 
-        this._checkInvariants();
         let wordIndex = this._wordIndex(bitIndex);
         return (wordIndex < this.wordsInUse) && ((this.words[wordIndex] & (1 << bitIndex)) != 0);
     }
@@ -69,7 +67,6 @@ class BitSet {
             throw Error(`Index Out Of Bounds Exception. fromIndex < 0: ${fromIndex}`);
         }
 
-        this._checkInvariants();
         let u = this._wordIndex(fromIndex);
         if (u >= this.wordsInUse) {
             return -1;
@@ -91,7 +88,6 @@ class BitSet {
         if (fromIndex < 0) {
             throw Error(`Index Out Of Bounds Exception. fromIndex < 0: ${fromIndex}`);
         }
-        this._checkInvariants();
         let u = this._wordIndex(fromIndex);
         if (u >= this.wordsInUse)
             return fromIndex;
@@ -128,30 +124,12 @@ class BitSet {
         if (this.words.length < wordsRequired) {
             // Allocate larger of doubled size or required size
             let request = Math.max(2 * this.words.length, wordsRequired);
-
-            let copy = new Array(request);
-            let length = Math.min(this.words.length, request);
-            for (let i = 0; i < length; i++) {
-                copy[i] = this.words[i];
-            }
-
-
-            this.words = copy;
+            this.words = Arrays.copyOf(this.words, request);
             this.sizeIsSticky = false;
         }
     }
 
-    _checkInvariants() {
-        if ((this.wordsInUse === 0 || this.words[this.wordsInUse - 1] != 0) &&
-            (this.wordsInUse >= 0 && this.wordsInUse <= this.words.length) &&
-            (this.wordsInUse == this.words.length || this.words[this.wordsInUse] === 0)) {
-            return;
-        }
-        throw Error('_checkInvariants ERROR');
-    }
-
     toString():String {
-        this._checkInvariants();
         let numBits = ( this.wordsInUse > 128) ? this.cardinality() : this.wordsInUse * BITS_PER_WORD;
         let b = new StringBuilder(6 * numBits + 2);
         b.append('{');
