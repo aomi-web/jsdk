@@ -1,6 +1,6 @@
 {
   "name": "jsdk",
-  "version": "0.0.13-Alpha",
+  "version": "0.0.14-Alpha",
   "description": "JavaScript Development Kit",
   "main": "index.js",
   "scripts": {
