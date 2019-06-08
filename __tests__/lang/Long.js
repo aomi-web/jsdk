@@ -4,7 +4,7 @@
  */
 
 
-import Long from '../../src/lang/Long';
+import Long from '../../lang/Long';
 
 
 function numberOfLeadingZeros() {

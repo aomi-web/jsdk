@@ -4,7 +4,7 @@
  */
 
 
-import StringBuilder from '../../src/lang/StringBuilder';
+import StringBuilder from '../../lang/StringBuilder';
 
 (() => {
 

@@ -3,7 +3,7 @@
  * @date 2015/12/27
  */
 
-import BitSet from '../../src/util/BitSet';
+import BitSet from '../../util/BitSet';
 
 var b = new BitSet(64);
 

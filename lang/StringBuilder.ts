@@ -2,20 +2,20 @@
  * @author Sean sean.snow@live.com
  * @date 2015/12/27
  */
-import Integer from './Integer';
-import Arrays from '../util/Arrays';
+import { Integer } from './Integer';
+import { Arrays } from '../util/Arrays';
 
-class StringBuilder {
+export class StringBuilder {
 
-    value:Array;
-    count:Number;
+    value: Array<any>;
+    count: number;
 
-    constructor(capacity:Number = 16) {
+    constructor(capacity: number = 16) {
         this.value = new Array(capacity);
         this.count = 0;
     }
 
-    append(v):StringBuilder {
+    append(v): StringBuilder {
         if (v == null) {
             return this._appendNull();
         }
@@ -29,11 +29,11 @@ class StringBuilder {
         return this;
     }
 
-    length():Number {
+    length(): number {
         return this.count;
     }
 
-    capacity():Number {
+    capacity(): number {
         return this.value.length;
     }
 
@@ -41,14 +41,14 @@ class StringBuilder {
         return this.value.join('');
     }
 
-    _ensureCapacityInternal(minimumCapacity:Number) {
+    _ensureCapacityInternal(minimumCapacity: number) {
         if (minimumCapacity - this.value.length > 0) {
             this._expandCapacity(minimumCapacity);
         }
     }
 
-    _expandCapacity(minimumCapacity:Number) {
-        let newCapacity = value.length * 2 + 2;
+    _expandCapacity(minimumCapacity: number) {
+        let newCapacity = this.value.length * 2 + 2;
         if (newCapacity - minimumCapacity < 0) {
             newCapacity = minimumCapacity;
         }

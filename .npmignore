@@ -2,6 +2,3 @@ node_modules
 .idea
 __tests__
 .gitignore
-.babelrc
-.eslintrc
-src

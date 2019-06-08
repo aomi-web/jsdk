@@ -3,7 +3,7 @@
  * @date 2015/12/27
  */
 
-import Arrays from '../../src/util/Arrays';
+import Arrays from '../../util/Arrays';
 
 function arraycopy() {
 
