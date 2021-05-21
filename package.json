@@ -1,13 +1,13 @@
 {
   "name": "jsdk",
-  "version": "0.0.14-Alpha",
+  "version": "1.0.0-Alpha",
   "description": "JavaScript Development Kit",
   "main": "index.js",
   "scripts": {
+    "clean": "find . -path \"./node_modules\" -prune -o -name \"*.js\" -o -name \"*.js.map\" -o -name \"*.d.ts\" |xargs rm -f | echo ''",
     "build": "tsc -d",
-    "watch": "npm run build && tsc -w",
-    "clear": "rm -rf *.d.ts *.js *.js.map **/*.d.ts **/*.js **/*.js.map",
-    "prepare": "npm run clear && npm run build"
+    "watch": "tsc -d && tsc -w",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,8 @@
     "url": "https://github.com/sitb-software/jsdk/issues"
   },
   "homepage": "https://github.com/sitb-software/jsdk#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "typescript": "^3.5.1"
+    "typescript": "^4.2.4"
   }
 }
