@@ -1,4 +1,26 @@
-node_modules
+# OSX
+#
+.DS_Store
+
+# WebStorm
+#
 .idea
-__tests__
+*.iml
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# project
+.editorconfig
 .gitignore
+.flowconfig
+.watchmanconfig
+
+Examples
+*.ts
+*.tsx
+*.js.map
+!*.d.ts
