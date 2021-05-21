@@ -15,6 +15,7 @@ project.xcworkspace
 .factorypath
 .springBeans
 .*.md.html
+.vscode
 
 dependency-reduced-pom.xml
 interpolated*.xml
@@ -22,6 +23,7 @@ settings.xml
 
 build.log
 npm-debug.log
+yarn-error.log
 
 manifest.yml
 
@@ -29,16 +31,12 @@ local.properties
 
 overridedb.*
 
-node_modules
 build
-/code
-/logs
-lib/
-target
-_site/
-activemq-data
+dll
+node_modules
+lib
 
-*.iml
+
 *.ipr
 *.iws
 *.pbxuser
@@ -55,3 +53,8 @@ activemq-data
 *.sw?
 .#*
 *#
+generated
+
+*.js
+!template/*/*.config.js
+!template/*/*.html.js
