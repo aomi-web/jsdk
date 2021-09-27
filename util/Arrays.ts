@@ -21,8 +21,11 @@ export class Arrays {
    * 笛卡尔积
    */
   static cartesian(arr: Array<any>): Array<any> {
-    if (arr.length < 2) {
-      return arr;
+    if (arr.length === 0) {
+      return [];
+    }
+    if (arr.length === 1) {
+      return arr[0].map(item => [item]);
     }
     return [].reduce.call(arr, function (col, set) {
       let res = [];
